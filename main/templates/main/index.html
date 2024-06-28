@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "main/css/style.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container-main">
+        <form action="">
+            <div class="write-task">
+                <label for="new-task">New task</label>
+                <input type="text" id="new-task" placeholder="Go to gym...">
+            </div>
+            <div class="choose-priority">
+                <label for="priorities">choose priority</label>
+                <select name="priorities" id="priorities">
+                    <option value="common">common</option>
+                    <option value="medium">medium</option>
+                    <option value="important">important</option>
+                </select>
+            </div>
+            <button class="create">create</button>
+        </form>
+    </div>
+    <div class="task">
+        <h3>Text</h3>
+        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam similique, labore maxime dicta a id in deserunt tempora nisi obcaecati molestias maiores facere ducimus possimus esse pariatur quod impedit. Laudantium magni sed odit eveniet ipsam quia nobis molestias. Doloribus recusandae iusto itaque magnam nihil, ratione voluptate facere nesciunt ea eius?</p>
+        <form action="" class="delete-task">
+            <input type="hidden" name="delete-task" id="">
+            <button class="delete-task-btn" type="sumbit"><img src="{% static "main/icons/deleteIcon.png" %}" alt="delete" width="25px" height="25px"></button>
+        </form>
+        <div class="priority-m">
+            <p>medium</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
