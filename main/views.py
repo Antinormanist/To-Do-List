@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from .forms import CreateTask
 from .models import Note
+from .utils import create_slug
 
 # Create your views here.
 def index(request):
@@ -19,15 +20,21 @@ def index(request):
                 else:
                     task_class = 'priority-h'
                     
+                slug = create_slug(request.user)
+                    
                 Note.objects.create(
                     text=text,
                     name=name,
                     priority=priority,
                     task_class=task_class,
-                    user=request.user
+                    slug=slug,
+                    user=request.user,
                 )
         
-    
+    if request.method == 'GET' and request.GET.get('delete-task') == '1':
+        tasks = Note.objects.filter(slug=request.GET['task-slug'])
+        if tasks:
+            Note.objects.get(slug=request.GET['task-slug']).delete()
     
     context = {
         'title': 'Main page',

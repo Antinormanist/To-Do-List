@@ -7,6 +7,7 @@ class Note(models.Model):
     text = models.TextField(default='Help my mom')
     priority = models.CharField(max_length=9)
     task_class = models.CharField(max_length=10)
+    slug = models.SlugField(default='null')
     user = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
     
     

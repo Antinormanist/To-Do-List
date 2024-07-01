@@ -31,6 +31,7 @@
         <h3>{{ user_task.name }}</h3>
         <p class="p">{{ user_task.text }}</p>
         <form action="" class="delete-task" method="GET">
+            <input type="hidden" name="task-slug" value="{{ user_task.slug }}" id="">
             <input type="hidden" name="delete-task" value="1" id="">
             <button class="delete-task-btn" type="sumbit"><img src="{% static "main/icons/deleteIcon.png" %}" alt="delete" width="25px" height="25px"></button>
         </form>
