@@ -14,7 +14,7 @@
     background-color: white;
     border: 2px solid black;
     width: 50%;
-    height: 25%;
+    height: 10rem;
     border-radius: 1rem;
     word-wrap: break-word;
     padding: 0.5rem;
@@ -83,14 +83,16 @@
     border: 2px solid black;
     /* color: black; */
     width: 100%;
-    height: 30%;
+    /* height: 30%; */
+    min-height: 5rem;
+    max-height: 30rem;
     border-radius: 1rem;
     word-wrap: break-word;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
     display: grid;
-    grid-template-rows: 20% 80%;
-    grid-template-columns: 15% 50% 10% 25%;
+    grid-template-rows: 2rem auto;
+    grid-template-columns: 35% 30% 10% 25%;
 }
 
 .delete-task-btn {
@@ -112,17 +114,19 @@
 
 .task h3 {
     margin: 0;
-    padding-bottom: 5px;
+    padding-bottom: 1rem;
+    overflow-y: scroll;
     text-align: center;
     background-color:gainsboro;
     border: 2px solid black;
     border-radius: 5px;
     width: 100%;
-    height: 50%;
+    height: 1rem;
 }
 
 .p {
     margin: 0;
+    margin-top: 1.2rem;
     grid-row-start: 2;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -138,7 +142,21 @@
     background-color: orange;
     border: 2px solid black;
     border-radius: 5px;
-    height: 50%;
+    height: 1.5rem;
+}
+
+.priority-e {
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 1.5rem;
+}
+
+.priority-h {
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 1.5rem;
 }
 
 .favorite {
@@ -158,6 +176,11 @@
     }
     #priorities {
         width: 1rem;
+    }
+
+    .priority-e, .priority-m, .priority-h {
+        grid-column-start: 3;
+        grid-column-end: 5;
     }
 }
 

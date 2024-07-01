@@ -11,11 +11,15 @@
 </head>
 <body>
     <header>
-        <img src="{% static "base/icons/LogoAntinormanist.png" %}" alt="Logo">
-        <a href="#" class="header-item login">Login</a>
-        <a href="#" class="header-item register">Register</a>
-        <a href="#" class="header-item logout">Logout</a>
-    </header>
+        <a class="img-a" href="{% url "main:index" %}"><img src="{% static "base/icons/LogoAntinormanist.png" %}" alt="Logo"></a>
+        {% if not user.is_authenticated %}
+            <a href="{% url "user:login" %}" class="header-item login">Login</a>
+            <a href="{% url "user:register" %}" class="header-item register">Register</a>
+        {% else %}
+            <h3 class="user-h3">Hello, {{request.user|truncatechars:8}}</h3>
+            <a href="{% url "user:logout" %}" class="header-item logout">Logout</a>
+        {% endif %}
+        </header>
     {% block content %} {% endblock %}
 </body>
 </html>
