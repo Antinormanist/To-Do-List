@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "user/css/user_general.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="" class="container-form" method="POST">
+        {% csrf_token %}
+        <label for="user-name" class="label-1">Your name</label>
+        <input type="text" name="username" id="user-name">
+        <label for="user-password" class="label-2">Your password</label>
+        <input type="password" name="password1" id="user-password">
+        <label for="user-password2" class="label-3">Your password again</label>
+        <input type="password" name="password2" id="user-password2">
+        <button type="sumbit">Register</button>
+    </form>
+    <hr>
+    <a href="{% url "user:login" %}">Have an account</a>
+</div>
+{% endblock %}

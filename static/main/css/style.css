@@ -1,0 +1,196 @@
+.container {
+    /* height: auto; */
+    height: 80%;
+    width: 90%;
+    /* align-self: center; */
+    justify-self: center;
+    /* color: white; */
+    /* display: grid; */
+    display: flex;
+    flex-direction: column;
+}
+
+.container-main {
+    background-color: white;
+    border: 2px solid black;
+    width: 50%;
+    height: 10rem;
+    border-radius: 1rem;
+    word-wrap: break-word;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-self: center;
+    /* display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 75% 25%; */
+}
+
+.container-main form {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 75% 25%;
+}
+
+.choose-priority {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.write-task {
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.write-task input {
+    grid-column-start: 2;
+    align-self: center;
+    height: 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.write-task label {
+    text-align: center;
+}
+
+.create {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    align-self: flex-end;
+    /* height: 1.2rem; */
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    background-color: rgb(38, 207, 38);
+    color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.create:hover {
+    cursor: pointer;
+    background-color: rgb(33, 182, 33)
+}
+
+.task {
+    background-color: white;
+    border: 2px solid black;
+    /* color: black; */
+    width: 100%;
+    /* height: 30%; */
+    min-height: 5rem;
+    max-height: 30rem;
+    border-radius: 1rem;
+    word-wrap: break-word;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: grid;
+    grid-template-rows: 2rem auto;
+    grid-template-columns: 35% 30% 10% 25%;
+}
+
+.delete-task-btn {
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 0;
+}
+
+.delete-task {
+    text-align: center;
+}
+
+.delete-task-btn:hover {
+    cursor: pointer;
+}
+
+.task h3 {
+    margin: 0;
+    padding-bottom: 1rem;
+    overflow-y: scroll;
+    text-align: center;
+    background-color:gainsboro;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 1rem;
+}
+
+.p {
+    margin: 0;
+    margin-top: 1.2rem;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    overflow-y: scroll;
+}
+
+.choose-priority {
+    display: flex;
+    flex-direction: column;
+}
+
+.priority-m {
+    background-color: orange;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 1.5rem;
+}
+
+.priority-e {
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 1.5rem;
+}
+
+.priority-h {
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 1.5rem;
+}
+
+.favorite {
+    border: none;
+    background-color: white;
+    padding: 0;
+}
+
+.favorite:hover {
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+    .choose-priority label {
+        display: none;
+    }
+    #priorities {
+        width: 1rem;
+    }
+
+    .priority-e, .priority-m, .priority-h {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .favorites {
+        display: flex;
+    }
+
+    .task h3 {
+        justify-self: center;
+        width: 50%;
+    }
+}

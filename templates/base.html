@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "base/css/style.css" %}">
+    {% block css %} {% endblock %}
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <a class="img-a" href="{% url "main:index" %}"><img src="{% static "base/icons/LogoAntinormanist.png" %}" alt="Logo"></a>
+        {% if not user.is_authenticated %}
+            <a href="{% url "user:login" %}" class="header-item login">Login</a>
+            <a href="{% url "user:register" %}" class="header-item register">Register</a>
+        {% else %}
+            <h3 class="user-h3">Hello, {{request.user|truncatechars:8}}</h3>
+            <a href="{% url "user:logout" %}" class="header-item logout">Logout</a>
+        {% endif %}
+        </header>
+    {% block content %} {% endblock %}
+</body>
+</html>
